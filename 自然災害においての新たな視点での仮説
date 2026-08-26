@@ -1,0 +1,96 @@
+# ==============================================================================
+# DISASTER HYPOTHESIS MODEL: SYSTEMIC SELF-DESTRUCTION (DISASTER-INDUCED MAN-MADE CALAMITY)
+# Language: Formal Logical Pseudo-Code for Disaster Sociology & Systems Engineering
+# ==============================================================================
+
+class ModernSociety:
+    def __init__(self):
+        self.grid_status = "STABLE"
+        self.electricity_dependence = True       # バグ1：すべての命綱を電気に繋いでいる脆弱性
+        self.egalitarian_peer_pressure = True     # バグ2：避難所の「一律平等（偽の公平）」という同調圧力
+        
+class Evacuee:
+    def __init__(self, preparation_level):
+        self.preparation_level = preparation_level  # HIGH（真面目に対策した人） vs NONE（未対策のクレクレさん）
+        self.psychological_stress = 0
+        self.physical_health = 100
+        self.status = "ALIVE"
+        self.location = "HOME"
+
+# ------------------------------------------------------------------------------
+# CORE HYPOTHESIS 1: THE TECHNOLOGICAL BUG (POWER-TRIAGE GAP)
+# ------------------------------------------------------------------------------
+def simulate_hospital_blackout(hospital, patients_list):
+    """
+    【仮説1：電力トリアージの狂い】
+    もし、有限な非常用電源を「空間の快適性（エアコンや明かり）」に浪費し、
+    「技師たちの検査器具」を真っ暗のまま後回しにするならば、
+    本来100%助かるはずの中等症・軽症者の見落とし率がMAXになり、人災としての死亡が爆発する。
+    """
+    hospital.grid_status = "COLLAPSED"
+    hospital.backup_generator = "ACTIVE"
+    
+    # 現代のバグだらけの給電ルート（平時の快適さを引きずった設定）
+    power_allocation = {
+        "ICU_Life_Support": "PRIORITIZED",         # 最重症（赤）の延命に電力を割く
+        "Ambient_Lighting_And_AC": "ACTIVE",        # 【バグ】エアコンや天井の明かりに電力を浪費
+        "Technologist_Diagnostic_Tools": "OFFLINE"  # 【致命傷】放射線・検査技師の器具が電力不足で停止
+    }
+    
+    for patient in patients_list:
+        if patient.triage in ["YELLOW", "GREEN"]: # 処置すれば助かる中等症・軽症者
+            # 優秀な技師の腕があっても、ポータブルエコーやレントゲン（電気）が動かない
+            diagnostic_accessibility = False 
+            
+            if not diagnostic_accessibility:
+                patient.condition = "UNNOTICED_DETERIORATION" # 避難所での血栓などの初期症状が見落とされる
+                patient.physical_health -= 80                 # 数日後に強制的に最重症へ悪化
+                if patient.physical_health <= 20:
+                    patient.status = "PREVENTABLE_DEATH_(MAN-MADE)" # 本来助かったはずの関連死
+    return patients_list
+
+
+# ------------------------------------------------------------------------------
+# CORE HYPOTHESIS 2: THE SOCIO-PSYCHOLOGICAL BUG (THE FLAW OF UNIFORM EQUALITY)
+# ------------------------------------------------------------------------------
+def simulate_shelter_dynamic(shelter, evacuees_list):
+    """
+    【仮説2：悪魔の公平（集団による自滅のバグ）】
+    もし、避難所が「一律の平等」を盾に個人の対策を強制回収しようとするならば、
+    真面目に対策した住民ほど集団から逃れて危険な孤立（車中泊）を選ばざるを得なくなり、
+    社会のルールのせいで命を落とす。
+    """
+    for evacuee in evacuees_list:
+        if evacuee.preparation_level == "HIGH": # 事前に時間とコストをかけて備えてきた人
+            # 現場に「子どもを盾にする未対策者」と「一律平等のルール」が存在する場合
+            if shelter.rule == "UNIFORM_EQUALITY" and shelter.peer_pressure == "HIGH":
+                evacuee.psychological_stress += 100 # 同調圧力による強烈なストレス
+                
+                # 真面目な人ほど、自分の備え（権利）を守るために集団からログインアウトする
+                evacuee.location = "CAR_PARKING_LOT" # 避難所の人間関係から逃れるための車中泊
+                
+                # 防犯のために車に籠城した結果、二次災害の死の罠が発動
+                evacuee.mobility = "RESTRICTED" # 狭い空間での不動
+                evacuee.hydration = "DECREASED_TO_AVOID_TOILET_USE" # トイレを嫌って水分を控える
+                
+                if evacuee.location == "CAR_PARKING_LOT" and evacuee.hydration == "DECREASED_TO_AVOID_TOILET_USE":
+                    evacuee.status = "DEATH_BY_ECONOMY_CLASS_SYNDROME_(MAN-MADE)" # 自滅の完成
+        else:
+            # 何もしてこなかった人は、行政の遅い配給をただ待つ
+            evacuee.location = "SHELTER_GYM"
+            evacuee.status = "DEPENDENT_ON_DELAYED_LOGISTICS"
+            
+    return evacuees_list
+
+# ==============================================================================
+# THE ARCHITECTURAL COMPILATION (SUMMARY OF PARADIGM SHIFT)
+# ==============================================================================
+# 【大人たちの古い防災観】
+# 地球の循環（エネルギー） -> 人間の被害 ＝「すべて自然のせい（天災・運命）」
+#
+# 【仮説として導き出した新時代の防災観】
+# 地球の循環（エネルギー） -> 一次災害の壁（不可避） -> 必要なのは：犠牲者への深い謝罪と自立の覚悟
+# 生き残った直後（避難フェーズ） -> 「電気への依存」✕「集団のバグ（偽の公平）」 
+#                             ＝ 100%人間が引き起こしている「自滅のシステム（災害人災）」
+# ==============================================================================
+
